@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "kind": "hubspot",
+  "block_version": "0.1.0",
+  "maintained_by": "HackInvent",
+  "source": {
+    "algorithm": "block-source-v1",
+    "sha256": "4bd4d6e01efc54104c6ce67fa30004087a8698f30f1382bc0e284d4ed56e95f2"
+  },
+  "bloxsmith_compatibility": [
+    "1.0.9"
+  ],
+  "tested_with_bloxsmith": "1.0.9",
+  "validations": [
+    {
+      "bloxsmith_version": "1.0.9",
+      "framework_commit": "f1a87f6369d2acfb8be41d23ea849384cd461c86",
+      "framework_source_sha256": "66e36a13fd9a23a0a0576ec81552d6e479671db6db9b8692cc7486c5aac4f3b8",
+      "tested_at": "2026-10-11T11:49:54.370097+00:00",
+      "status": "passed",
+      "installation_mode": "bundled",
+      "suite_paths": [
+        "tests/F5.01_hubspot.py",
+        "tests/F5.02_hubspot_runtime.py",
+        "tests/F8.01_hubspot_ui.py"
+      ],
+      "suite_count": 3,
+      "report_sha256": "64d7c31aeaf51dfa10933c4fa1b51d058b36f3af70d9cf4673bc337b9d825cc9"
+    }
+  ]
+}

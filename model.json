@@ -1,0 +1,178 @@
+{
+  "kind": "hubspot",
+  "version": "0.1.0",
+  "title": "HubSpot",
+  "description": "Search, create, update and associate HubSpot CRM records.",
+  "repository_url": "https://github.com/HackInvent/bloxmith-hubspot",
+  "bloxsmith_compatibility": [
+    "1.0.9"
+  ],
+  "tested_with_bloxsmith": "1.0.9",
+  "prerequisites": [
+    {
+      "type": "manual",
+      "name": "Linux/POSIX with Python 3.10+ and TLS support, a HubSpot private app access token with the CRM object scopes it needs stored in the BloxSmith wallet, and outbound HTTPS access to api.hubapi.com."
+    }
+  ],
+  "locales": {
+    "en": "locales/en.json",
+    "fr": "locales/fr.json"
+  },
+  "ports": {
+    "inputs": [
+      {
+        "id": 1,
+        "name": "request",
+        "title": "request",
+        "accepts": [
+          "application/json",
+          "text/plain",
+          "message/*"
+        ],
+        "multiplicity": "one",
+        "required": false,
+        "execution_requirement": "not_required_for_execution"
+      }
+    ],
+    "outputs": [
+      {
+        "id": 1,
+        "name": "records",
+        "title": "records",
+        "emits": [
+          "application/json",
+          "message/*"
+        ],
+        "multiplicity": "many"
+      },
+      {
+        "id": 2,
+        "name": "result",
+        "title": "result",
+        "emits": [
+          "application/json",
+          "message/*"
+        ],
+        "multiplicity": "many"
+      },
+      {
+        "id": 3,
+        "name": "changed",
+        "title": "changed",
+        "emits": [
+          "application/json",
+          "message/*"
+        ],
+        "multiplicity": "many"
+      },
+      {
+        "id": 4,
+        "name": "error",
+        "title": "error",
+        "emits": [
+          "application/json",
+          "message/*"
+        ],
+        "multiplicity": "many"
+      }
+    ]
+  },
+  "config": {
+    "enabled": false,
+    "secret_ref": "",
+    "object_type": "contacts",
+    "operation": "search",
+    "allowed_operations": [
+      "search",
+      "get",
+      "list_properties"
+    ],
+    "properties": [],
+    "allow_writes": false,
+    "allow_delete": false,
+    "id_property": "",
+    "max_write_records": 100,
+    "read_limit": 1000,
+    "page_size": 100,
+    "max_pages": 20,
+    "watch": false,
+    "watch_interval_sec": 300,
+    "emit_existing": false,
+    "existing_since_hours": 24,
+    "watch_max_items": 100,
+    "timeout_sec": 60,
+    "max_requests_per_10s": 100,
+    "max_search_per_sec": 4,
+    "max_retries": 2,
+    "max_retry_wait_sec": 15,
+    "max_request_bytes": 1048576,
+    "max_response_bytes": 8388608,
+    "api_base_url": "https://api.hubapi.com",
+    "ca_file": ""
+  },
+  "port_capabilities": {
+    "can_add_inputs": false,
+    "can_add_outputs": false
+  },
+  "runtime": {
+    "initial_state": "waiting",
+    "runtime_executable": true,
+    "active_worker": true,
+    "centralized_executor": "generic",
+    "centralized_dependency_mode": "all_inputs",
+    "active_execution_policy": "on_each_event",
+    "file_browser": false
+  },
+  "ui_assets": {
+    "modal": [
+      {
+        "kind": "css",
+        "path": "assets/css/properties.css"
+      },
+      {
+        "kind": "css",
+        "path": "assets/css/settings.css"
+      },
+      {
+        "kind": "js",
+        "path": "assets/js/properties.js"
+      },
+      {
+        "kind": "js",
+        "path": "assets/js/settings.js"
+      },
+      {
+        "kind": "js",
+        "path": "assets/js/block_modal.js"
+      }
+    ],
+    "inspector_panel": [
+      {
+        "kind": "css",
+        "path": "assets/css/properties.css"
+      },
+      {
+        "kind": "css",
+        "path": "assets/css/settings.css"
+      },
+      {
+        "kind": "js",
+        "path": "assets/js/properties.js"
+      },
+      {
+        "kind": "js",
+        "path": "assets/js/settings.js"
+      },
+      {
+        "kind": "js",
+        "path": "assets/js/inspector_panel.js"
+      }
+    ],
+    "node_card": [
+      {
+        "kind": "css",
+        "path": "assets/css/node_card.css"
+      }
+    ]
+  }
+}
